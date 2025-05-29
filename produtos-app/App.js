@@ -12,7 +12,7 @@ export default function App() {
   const [loading, setLoading] = useState(false);
 
   // Substitua pelo IP correto da sua máquina
-  const baseURL = 'http://192.168.0.7:3000';
+  const baseURL = 'https://backend-produtos.onrender.com';
 
   // Carrega os produtos ao iniciar
   useEffect(() => {
