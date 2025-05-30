@@ -1,96 +1,81 @@
-# Backend - API de Produtos com Upload de Imagens
+# 📱 Produtos App
 
-Este é um backend simples desenvolvido com **Node.js**, **Express** e **MongoDB**, que permite o cadastro, listagem e remoção de produtos, incluindo o upload de imagens.
+Aplicativo mobile desenvolvido com **React Native** e **Expo** que permite o cadastro de produtos com foto, nome e descrição. Os dados são armazenados localmente com `AsyncStorage` e sincronizados com uma API remota.
 
-## Tecnologias Utilizadas
+## 🚀 Funcionalidades
 
-- Node.js
-- Express
-- MongoDB
-- Mongoose
-- Multer
-- Dotenv
-- CORS
+- Tirar foto do produto com a câmera.
+- Preencher nome e descrição.
+- Enviar o produto com imagem para o backend (API REST).
+- Persistência local dos dados com `@react-native-async-storage/async-storage`.
+- Listagem dos produtos.
+- Exclusão de produtos.
+- Requisições HTTP com `axios`.
 
-## Pré-requisitos
+## 🧪 Tecnologias utilizadas
 
-- Node.js instalado
-- MongoDB em execução local ou na nuvem
+- [React Native](https://reactnative.dev/)
+- [Expo](https://expo.dev/)
+- [Axios](https://axios-http.com/)
+- [AsyncStorage](https://react-native-async-storage.github.io/async-storage/)
+- [expo-image-picker](https://docs.expo.dev/versions/latest/sdk/imagepicker/)
+- [expo-camera](https://docs.expo.dev/versions/latest/sdk/camera/)
 
-## Instalação
+## 📷 Imagens
+
+As imagens usadas no projeto estão no diretório `assets/`:
+
+- `icon.png`: ícone do app.
+- `splash-icon.png`: imagem de splash.
+- `adaptive-icon.png`: ícone adaptativo Android.
+- `favicon.png`: ícone da versão web.
+
+## 📦 Instalação
 
 1. Clone o repositório:
-
-```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
-```
+   ```bash
+   git clone https://github.com/seu-usuario/produtos-app.git
+   cd produtos-app
+   ```
 
 2. Instale as dependências:
+   ```bash
+   npm install
+   ```
 
-```bash
-npm install
-```
+3. Inicie o projeto com Expo:
+   ```bash
+   npm start
+   ```
 
-3. Crie um arquivo `.env` na raiz do projeto com o conteúdo:
+## ⚙️ Backend
 
-```
-PORT=3000
-MONGO_URI=mongodb://localhost:27017/nome-do-banco
-```
+Este app depende de um backend disponível em:  
+`https://backend-produtos.onrender.com`
 
-> Altere o valor de `MONGO_URI` conforme necessário.
+Certifique-se de que a API esteja funcionando antes de cadastrar ou buscar produtos.
 
-## Rodando o Projeto
-
-```bash
-npm start
-```
-
-A API estará disponível em `http://localhost:3000`.
-
-## Estrutura do Projeto
+## 📁 Estrutura de arquivos
 
 ```
 .
-├── models/
-│   └── Produto.js       # Modelo do produto
-├── routes/
-│   └── produtos.js      # Rotas da API
-├── uploads/             # Pasta para imagens enviadas
-├── server.js            # Arquivo principal
-├── .env                 # Variáveis de ambiente
+├── App.js
+├── index.js
+├── assets/
+│   ├── icon.png
+│   ├── splash-icon.png
+│   ├── adaptive-icon.png
+│   └── favicon.png
+├── app.json
 ├── package.json
-└── README.md
+└── ...
 ```
 
-## Endpoints da API
+## 💡 Observações
 
-### POST `/produtos`
+- Permissões de câmera e galeria são solicitadas ao usuário.
+- O projeto está pronto para rodar no Android, iOS e Web com Expo.
 
-Cria um novo produto.
+---
 
-**Campos (form-data):**
-- `nome` (obrigatório)
-- `descricao` (opcional)
-- `imagem` (arquivo de imagem, opcional)
-
-### GET `/produtos`
-
-Retorna a lista de produtos cadastrados.
-
-### DELETE `/produtos/:id`
-
-Remove um produto pelo ID. Se houver uma imagem associada, ela será excluída do servidor.
-
-## Acesso às Imagens
-
-Imagens enviadas podem ser acessadas diretamente pela URL:
-
-```
-http://localhost:3000/uploads/NOME_DA_IMAGEM
-```
-
-## Licença
-
-Projeto licenciado sob a licença ISC.
+Desenvolvido com 💙 usando Expo
