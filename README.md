@@ -1,4 +1,4 @@
-README - Aplicativo de Cadastro de Produtos
+Aplicativo de Cadastro de Produtos
 📱 Visão Geral
 Aplicativo React Native para cadastro de produtos com fotos, desenvolvido com Expo. Permite:
 
